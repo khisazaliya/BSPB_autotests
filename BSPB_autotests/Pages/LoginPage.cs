@@ -13,45 +13,44 @@ namespace BSPB_autotests.Pages
 
     public class LoginPage : PageBase
     {
-        protected AllureReporting AllureReport { get; private set; }
 
         private By username = By.Name("username");
         private By password = By.Name("password");
         private By loginBtn = By.Id("login-button");
         private By loginOptBtn = By.Id("login-otp-button");
-        private By userGreeting = By.Id("user-greeting");
+        private By codeInput = By.Id("otp-code");
 
-        public LoginPage(IWebDriver driver) : base(driver)
+        public LoginPage(ApplicationManager manager)
+               : base(manager)
         {
-            AllureReport = new AllureReporting();
         }
 
-
-        public LoginPage LoginWithNameAndPassword(string name, string pwd)
+        public void LoginWithNameAndPassword(string name, string pwd)
         {
 
-            AllureReport.LogStep("enter username");
             Click(username);
             Clear(username);
             SendKeys(username, name);
 
-            AllureReport.LogStep("enter password");
             Click(password);
             Clear(password);
             SendKeys(password, pwd);
 
-            AllureReport.LogStep("click login button");
             Click(loginBtn);
+        }
 
-
+        public void PassAuthentification(string code)
+        {
             Thread.Sleep(2000);
-            AllureReport.LogStep("click login button again after number entering");
+            Click(codeInput);
+            Clear(codeInput);
+            SendKeys(codeInput, code);
             Click(loginOptBtn);
 
-            AllureReport.LogStep("check if user greeting text is Hello World! ");
-            var text = GetText(userGreeting);
-            Assert.That(text == "Hello World!");
-            return new LoginPage(Driver);
+        }
+        public void EndTest()
+        {
+            EndTest();
         }
     }
 }

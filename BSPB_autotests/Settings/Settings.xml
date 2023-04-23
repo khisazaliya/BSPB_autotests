@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings>
+	<BaseUrl>https://idemo.bspb.ru/overview</BaseUrl>
+	<Login>demo</Login>
+	<Password>demo</Password>
+	<AuthCode>0000</AuthCode>
+</settings>
