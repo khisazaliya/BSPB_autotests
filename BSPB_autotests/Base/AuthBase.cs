@@ -20,9 +20,16 @@ namespace BSPB_autotests.Base
         public void CheckAuth()
         {
             app.Navigation.OpenWelcomePage();
-            if (app.Main.FindUsername != null) return;
-            app.Login.LoginWithNameAndPassword(Username, Password);
-            app.Login.PassAuthentification(AuthCode);
+            try
+            {
+              if (app.Main.FindUsername() != "") return;
+            }
+            catch(OpenQA.Selenium.NoSuchElementException)
+            {
+              app.Login.LoginWithNameAndPassword(Username, Password);
+              app.Login.PassAuthentification(AuthCode);
+            }
+            return;
         }
 
     }

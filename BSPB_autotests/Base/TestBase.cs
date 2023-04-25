@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Allure.Commons;
 using NUnit.Framework.Interfaces;
 using BSPB_autotests.Pages;
-using BSPB_autotests.Report_helpers;
+using BSPB_autotests.ReportHelpers;
 
 namespace BSPB_autotests.Base
 {
@@ -16,7 +16,6 @@ namespace BSPB_autotests.Base
     {
         protected ApplicationManager app;
         protected ScreenshotMaker? screenshotMaker;
-        protected BrowserLogs browserLogs;
 
         [OneTimeSetUp]
         public void SetupTest()
@@ -29,8 +28,6 @@ namespace BSPB_autotests.Base
         {
             screenshotMaker = new ScreenshotMaker();
             screenshotMaker.MakeScreenshot(app);
-            browserLogs = new BrowserLogs();
-            browserLogs.СheckLogs(app);
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BSPB_autotests
+namespace BSPB_autotests.ReportHelpers
 {
     public class ScreenshotMaker
     {
