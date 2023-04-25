@@ -23,7 +23,7 @@ namespace BSPB_autotests.Pages
         private By month = By.CssSelector("#deposit-rates label.radio input[value='31']");
 
         //кнопка "Открыть вклад" на Демо Зимний Петербург онлайн
-        private By Peter = By.XPath("//strong[contains(text(),'Демо Зимний Петербург онлайн')]");
+        private By Peter = By.XPath("//a[contains(@data-web-analytics-event,'Демо Зимний Петербург онлайн')]");
 
         //инпут сумма вклада
         private By ammount = By.Name("amount");
@@ -38,7 +38,7 @@ namespace BSPB_autotests.Pages
         private By tariff = By.XPath("//a[contains(text(), 'Тариф')]");
 
         //чекбокс "Я ознакомлен(а) и соглашаюсь с Правилами..."
-        private By agreeDeclare = By.CssSelector(".immune.required.condition[name='condition.instantDepositAgreement']");
+        private By agreeDeclare = By.CssSelector(".immune.required.condition[name='condition.newDepositConditions']");
 
         //чекбокс "Я ознакомлен(а) с Заявлением..."
         private By agreeRules = By.CssSelector(".immune.required.condition[name='condition.instantDepositAgreement']");
