@@ -13,10 +13,19 @@ namespace BSPB_autotests.Pages
     public class LoginPage : PageBase
     {
 
+        //поле ввода логина
         private By username = By.Name("username");
+
+        //поле ввода пароля
         private By password = By.Name("password");
+
+        //кнопка "Войти"
         private By loginBtn = By.Id("login-button");
+
+        //кнопка "Войти" после ввода кода подтверждения
         private By loginOptBtn = By.Id("login-otp-button");
+
+        //поле ввода кода подтверждения
         private By codeInput = By.Id("otp-code");
 
         public LoginPage(ApplicationManager manager)
