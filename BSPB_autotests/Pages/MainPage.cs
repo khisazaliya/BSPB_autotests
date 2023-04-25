@@ -10,15 +10,31 @@ namespace BSPB_autotests.Pages
 {
     public class MainPage : PageBase
     {
-
+        //логотип Банка
         private By bankLogo = By.CssSelector("div #header #logo > img.print-hidden");
+
+        //наименование физического/юридического лица
         private By userName = By.CssSelector("div #header #representee-list > div > button > span.filter-option.pull-left");
+
+        //кнопка "Переписка с Банком"
         private By communicationWithBank = By.CssSelector("div #header #messages-button");
+
+        //кнопка "Персональные предложения"
         private By personalSuggestions = By.CssSelector("div #header #offers-button");
+
+        //кнопка "Контакты Банка"
         private By bankContacts = By.CssSelector("div #header #contact-button");
+
+        //кнопка переключения на англ. язык сайта
         private By language = By.CssSelector("div #header div.links.pull-right > div > button");
-        private By settings = By.CssSelector("div #header #settings-button");
+
+        //кнопка "Настройки"
+        private By settings = By.Id("div #header #settings-button");
+
+        //кнопка "Вклады"
         private By deposits = By.Id("deposits-index");
+
+        //кнопка "Кредиты"
         private By credits = By.Id("loans-index");
         public MainPage(ApplicationManager manager)
             : base(manager)
