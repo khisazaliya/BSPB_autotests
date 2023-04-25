@@ -44,7 +44,7 @@ namespace BSPB_autotests.Pages
 
         public IWebElement FindBankLogo()
         {
-            return Element(bankLogo);
+            return FindElementIsVisible(bankLogo);
         }
 
         public string FindBankLogoText()
@@ -59,36 +59,29 @@ namespace BSPB_autotests.Pages
 
         public IWebElement FindCommunicationWithBankButton()
         {
-            return Element(communicationWithBank);
+            return FindElementIsVisible(communicationWithBank);
 
         }
 
         public IWebElement FindPersonalSuggestionsButton()
         {
-            Thread.Sleep(5000);
-            return Element(personalSuggestions);
+            return FindElementIsVisible(personalSuggestions);
 
         }
 
         public IWebElement FindBankContactsButton()
         {
-            Thread.Sleep(5000);
-            return Element(bankContacts);
+            return FindElementIsVisible(bankContacts);
 
         }
         public IWebElement FindLanguageButton()
         {
-            Thread.Sleep(5000);
-            return Element(language);
-
+            return FindElementIsVisible(language);
         }
 
         public IWebElement FindSettingsButton()
         {
-
-            Thread.Sleep(5000);
-            return Element(settings);
-
+            return FindElementIsVisible(settings);
         }
 
         public void RedirectToDeposits()

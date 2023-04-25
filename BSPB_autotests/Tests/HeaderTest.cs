@@ -16,7 +16,7 @@ namespace BSPB_autotests.Tests
 {
 
     [AllureNUnit]
-    public class HeaderTest : AuthBase
+    public class HeaderTest : TestBase
     {
         public UserData _user = new UserData(Username, Password);
 

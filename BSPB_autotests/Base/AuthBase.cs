@@ -24,7 +24,7 @@ namespace BSPB_autotests.Base
             {
               if (app.Main.FindUsername() != "") return;
             }
-            catch(OpenQA.Selenium.NoSuchElementException)
+            catch(OpenQA.Selenium.WebDriverTimeoutException)
             {
               app.Login.LoginWithNameAndPassword(Username, Password);
               app.Login.PassAuthentification(AuthCode);

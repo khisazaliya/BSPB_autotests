@@ -41,8 +41,7 @@ namespace BSPB_autotests
             navigation = new NavigationHelper(this);
             js = (IJavaScriptExecutor)driver;
         }
-
-
+ 
         public static ApplicationManager GetInstance()
         {
 

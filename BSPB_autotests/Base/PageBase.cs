@@ -2,6 +2,7 @@
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,53 +15,60 @@ namespace BSPB_autotests.Base
     {
         public IWebDriver driver;
         protected ApplicationManager manager;
+        protected int timeOutInSeconds = 5;
         public PageBase(ApplicationManager manager)
         {
             this.manager = manager;
             this.driver = manager.Driver;
         }
 
-        public IWebElement Element(By by)
+        public IWebElement FindElementIsVisible(By by)
         {
-            return driver.FindElement(by);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOutInSeconds));
+            return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(by));
         }
 
+        public IWebElement FindElementIsClickable(By by)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOutInSeconds));
+            return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(by));
+        }
         public void Click(By by)
         {
-            Element(by).Click();
+            FindElementIsClickable(by).Click();
         }
 
         public void Clear(By by)
         {
-            Element(by).Clear();
+            FindElementIsVisible(by).Clear();
         }
 
         public void SendKeys(By by, string text)
         {
-            Element(by).SendKeys(text);
+            FindElementIsVisible(by).SendKeys(text);
         }
         public void ScrollPage()
         {
             By html = By.TagName("html");
-            Element(html).SendKeys(Keys.End);
+            FindElementIsVisible(html).SendKeys(Keys.End);
         }
         public void ScrollElement(By by)
         {
-            driver.ExecuteJavaScript("arguments[0].scrollTop = arguments[0].scrollHeight", Element(by));
+            driver.ExecuteJavaScript("arguments[0].scrollTop = arguments[0].scrollHeight", FindElementIsVisible(by));
         }
         public string GetText(By by)
         {
-            return Element(by).Text;
+            return FindElementIsVisible(by).Text;
         }
 
         public string GetAlt(By by)
         {
-            return Element(by).GetAttribute("alt");
+            return FindElementIsVisible(by).GetAttribute("alt");
         }
 
         public string GetCssValue(By by)
         {
-            return Element(by).GetCssValue("transition");
+            return FindElementIsVisible(by).GetCssValue("transition");
         }
     }
 }

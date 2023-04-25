@@ -49,7 +49,6 @@ namespace BSPB_autotests.Pages
 
         public void PassAuthentification(string code)
         {
-            Thread.Sleep(2000);
             Click(codeInput);
             Clear(codeInput);
             SendKeys(codeInput, code);

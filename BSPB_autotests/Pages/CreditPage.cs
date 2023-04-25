@@ -28,7 +28,7 @@ namespace BSPB_autotests.Pages
 
         public IWebElement FindLoanApplicationBtn()
         {
-            return Element(loanApplicationBtn);
+            return FindElementIsVisible(loanApplicationBtn);
         }
 
         public void ClickLoanApplicationBtn()
@@ -38,7 +38,7 @@ namespace BSPB_autotests.Pages
 
         public IWebElement FindCreditProducts()
         {
-            return Element(creditProducts);
+            return FindElementIsVisible(creditProducts);
         }
 
         public bool isCreditAnimated()

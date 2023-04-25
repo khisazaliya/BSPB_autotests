@@ -32,7 +32,7 @@ namespace BSPB_autotests.Pages
         private By estimated_interest = By.Id("estimated-interest");
 
         //кнопка "Дальше"
-        private By submitBtn = By.Id("submit-button");
+        private By submitBtn = By.CssSelector("button[id='submit-button']");
 
         //ссылка "Тарифы"
         private By tariff = By.XPath("//a[contains(text(), 'Тариф')]");
@@ -65,11 +65,11 @@ namespace BSPB_autotests.Pages
 
         public IWebElement FindOpenDepositButton()
         {
-            return Element(openDepositBtn);
+            return FindElementIsVisible(openDepositBtn);
         }
         public IWebElement FindDepositsHistory()
         {
-            return Element(depositsHistory);
+            return FindElementIsVisible(depositsHistory);
         }
 
         public void CLickOpenDepositBnt()
@@ -95,13 +95,13 @@ namespace BSPB_autotests.Pages
 
         public IWebElement FindEstimatedInterest()
         {
-            return Element(estimated_interest);
+            return FindElementIsVisible(estimated_interest);
         }
 
         public void ClickSubmitButton()
         {
             ScrollPage();
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
             Click(submitBtn);
         }
         public void ClickTariffLink()
@@ -112,16 +112,13 @@ namespace BSPB_autotests.Pages
         public void FillAgreementDeclaration()
         {
             ScrollPage();
-            Thread.Sleep(3000);
             Click(agreeDeclare);
         }
         public string FillAgreementRules()
         {
             Click(agreeRules);
-            Thread.Sleep(2000);
 
             ScrollElement(agreementPopup);
-            Thread.Sleep(2000);
 
             return GetText(order);
         }
@@ -129,7 +126,6 @@ namespace BSPB_autotests.Pages
         public string CLickConfirmBtn()
         {
             Click(acceptBtn);
-            Thread.Sleep(2000);
             Click(confirmBtn);
             return GetText(successText);
         }
