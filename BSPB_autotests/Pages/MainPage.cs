@@ -29,7 +29,7 @@ namespace BSPB_autotests.Pages
         private By language = By.CssSelector("div #header div.links.pull-right > div > button");
 
         //кнопка "Настройки"
-        private By settings = By.Id("div #header #settings-button");
+        private By settings = By.CssSelector("div #header #settings-button");
 
         //кнопка "Вклады"
         private By deposits = By.Id("deposits-index");

@@ -42,18 +42,7 @@ namespace BSPB_autotests
             js = (IJavaScriptExecutor)driver;
         }
 
-        ~ApplicationManager()
-        {
-            try
-            {
-                driver.Quit();
-            }
-            catch (Exception)
-            {
-                //
-            }
-        }
- 
+
         public static ApplicationManager GetInstance()
         {
 
