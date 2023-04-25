@@ -10,10 +10,18 @@ namespace BSPB_autotests.Pages
 {
     public class CreditPage : PageBase
     {
+        //кнопка "Оформить кредитный продукт"
         private By loanApplicationBtn = By.Id("loan-application-btn");
+
+        //плитки продуктов
         private By creditProducts = By.Id("unified-loan-application-selector");
+
+        //плитка "Кредитная карта"
         private By credit = By.CssSelector("#contentbar > div.unified-loan-application-selector > div:nth-child(1) > div:nth-child(1)");
+
+        //кнопка "Оформить заявку" на плитке "Кредитная карта"
         private By creditCardApplyBtn = By.Id("credit-card-loan-apply");
+
         public CreditPage(ApplicationManager manager) : base(manager)
         {
         }
