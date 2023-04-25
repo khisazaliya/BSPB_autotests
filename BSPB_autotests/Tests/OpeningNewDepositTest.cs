@@ -1,15 +1,6 @@
-﻿using AventStack.ExtentReports;
-using BSPB_autotests.Base;
-using BSPB_autotests.Pages;
-using BSPB_autotests.Reports;
+﻿using BSPB_autotests.Base;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace BSPB_autotests.Tests
 {
@@ -19,7 +10,7 @@ namespace BSPB_autotests.Tests
 
         [AllureDescription("Открыть новый вклад RUB")]
         [Test]
-        public void WhenEntedValidData_DepositShouldBeOpened()
+        public void WhenEnterValidData_DepositShouldBeOpened()
         {
 
             OpenDepositPage();

@@ -1,13 +1,6 @@
-﻿using AventStack.ExtentReports;
-using BSPB_autotests.Base;
-using BSPB_autotests.Reports;
+﻿using BSPB_autotests.Base;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BSPB_autotests.Tests
 {

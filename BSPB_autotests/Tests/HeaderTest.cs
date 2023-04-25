@@ -1,7 +1,6 @@
 ﻿using BSPB_autotests.Base;
 using BSPB_autotests.Models;
 using BSPB_autotests.Pages;
-using BSPB_autotests.Reports;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using OpenQA.Selenium;
@@ -12,7 +11,6 @@ using BSPB_autotests.Settings;
 using static BSPB_autotests.Settings.Settings;
 using Allure.Commons;
 using NUnit.Framework.Interfaces;
-using NPOI.Util;
 
 namespace BSPB_autotests.Tests
 {
@@ -48,8 +46,6 @@ namespace BSPB_autotests.Tests
             CheckLanguageButton();
 
             CheckSettingsButton();
-
-            AllureLifecycle.Instance.AddAttachment(("Any text", new ByteArrayInputStream(((Screenshot)app.Driver).AsByteArray)).ToString());
         }
 
         [AllureStep("Открыть сайт")]

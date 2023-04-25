@@ -25,19 +25,5 @@ namespace BSPB_autotests.Base
             app.Login.PassAuthentification(AuthCode);
         }
 
-        [TearDown]
-        public void End()
-        {
-            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
-            {
-                var screenshot = ((ITakesScreenshot)app.Driver).GetScreenshot();
-                var filename = TestContext.CurrentContext.Test.MethodName + "_screenshot_" + DateTime.Now.Ticks + ".png";
-                var path = "D:\\" + filename;
-                screenshot.SaveAsFile(path, ScreenshotImageFormat.Png);
-                TestContext.AddTestAttachment(path);
-                AllureLifecycle.Instance.AddAttachment(filename, "image/png", path);
-            }
-        }
-
     }
 }

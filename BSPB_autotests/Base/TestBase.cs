@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BSPB_autotests.Reports;
 using Allure.Commons;
 using NUnit.Framework.Interfaces;
 using BSPB_autotests.Pages;
@@ -15,6 +14,7 @@ namespace BSPB_autotests.Base
     public class TestBase
     {
         protected ApplicationManager app;
+        protected ScreenshotMaker? screenshotMaker;
 
         [OneTimeSetUp]
         public void SetupTest()
@@ -22,10 +22,11 @@ namespace BSPB_autotests.Base
             app = ApplicationManager.Instance;
         }
 
-        [OneTimeTearDown]
+        [TearDown]
         public void QuitTest()
         {
-            app.Stop();
+            screenshotMaker = new ScreenshotMaker();
+            screenshotMaker.MakeScreenshot(app);
         }
     }
 }

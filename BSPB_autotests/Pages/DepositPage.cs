@@ -99,6 +99,7 @@ namespace BSPB_autotests.Pages
         public string CLickConfirmBtn()
         {
             Click(acceptBtn);
+            Thread.Sleep(2000);
             Click(confirmBtn);
             return GetText(successText);
         }
