@@ -10,22 +10,52 @@ namespace BSPB_autotests.Pages
 {
     public class DepositPage : PageBase
     {
-
+        //кнопка "Открыть вклад"
         private By openDepositBtn = By.Id("btn-show-rates");
+
+        //таблица история вкладов
         private By depositsHistory = By.Id("deposits");
-        private By rub = By.CssSelector("#deposit-rates > div.row > div.span2 > label:nth-child(2) > input[type=radio]");
-        private By month = By.CssSelector("#deposit-rates > div.row > div.span6 > div:nth-child(3) > label:nth-child(2)");
-        private By Peter = By.CssSelector("#table-deposit-rates > tbody > tr:nth-child(3) > td:nth-child(7) > a");
+
+        //радиокнопка "rub"
+        private By rub = By.CssSelector("#deposit-rates label.radio input[value='RUB']");
+
+        //радиокнопка "1 месяц"
+        private By month = By.CssSelector("#deposit-rates label.radio input[value='31']");
+
+        //кнопка "Открыть вклад" на Демо Зимний Петербург онлайн
+        private By Peter = By.XPath("//strong[contains(text(),'Демо Зимний Петербург онлайн')]");
+
+        //инпут сумма вклада
         private By ammount = By.Name("amount");
+
+        //выпадающий список "Счет"
         private By estimated_interest = By.Id("estimated-interest");
+
+        //кнопка "Дальше"
         private By submitBtn = By.Id("submit-button");
-        private By tariff = By.CssSelector("#contentbar > form > div.conditions-confirmation-block > div:nth-child(1) > div > div > label > p > span > a:nth-child(2)");
-        private By agreeDeclare = By.CssSelector("#contentbar > form > div.conditions-confirmation-block > div:nth-child(1) > div > div > label > input");
-        private By agreeRules = By.CssSelector("#contentbar > form > div.conditions-confirmation-block > div:nth-child(2) > div > div > label > input");
+
+        //ссылка "Тарифы"
+        private By tariff = By.XPath("//a[contains(text(), 'Тариф')]");
+
+        //чекбокс "Я ознакомлен(а) и соглашаюсь с Правилами..."
+        private By agreeDeclare = By.CssSelector(".immune.required.condition[name='condition.instantDepositAgreement']");
+
+        //чекбокс "Я ознакомлен(а) с Заявлением..."
+        private By agreeRules = By.CssSelector(".immune.required.condition[name='condition.instantDepositAgreement']");
+
+        //всплывающее окно "Заявление об открытии срочного вклада"
         private By agreementPopup = By.Id("instant-deposit-agreement-content");
+
+        //заголовок окна "Заявление об открытии срочного вклада"
         private By order = By.CssSelector("#instant-deposit-agreement-header > h3");
+
+        //кнопка "Принимаю" в окне "Заявление об открытии срочного вклада"
         private By acceptBtn = By.Id("accept-instant-deposit-agreement-button");
+
+        //кнопка "Подтвердить"
         private By confirmBtn = By.Id("confirm");
+
+        //сообщение об успешном открытии вклада
         private By successText = By.CssSelector("#contentbar > div.well.success-info > h3");
 
         public DepositPage(ApplicationManager manager)
